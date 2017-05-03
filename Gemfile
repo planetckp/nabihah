@@ -9,7 +9,7 @@ end
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.2'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
@@ -41,6 +41,17 @@ gem "paperclip", "~> 4.2"
 gem 'paperclip-dropbox', '>= 1.2.1'
 gem 'figaro', '~> 1.1', '>= 1.1.1'
 gem 'mail_form', '~> 1.5', '>= 1.5.1'
+
+
+
+group :production do
+gem 'pg', '~> 0.18.4' 
+gem 'rails_12factor', '~> 0.0.3'
+end
+
+group :development, :test do
+gem 'sqlite3'
+end
 
 
 group :development, :test do
