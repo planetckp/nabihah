@@ -1,0 +1,261 @@
+ <div class="banner">
+
+      <div class="bg-color">
+     <font color="white"> <p id="notice"><%= notice %></p>
+        <div class="container">
+          <div class="row">
+            <div class="banner-text text-center">
+              <div class="text-border">
+                <h1 class="text-dec"><b>Digital <span class="solor">VIDYAH</span> <i class="fa fa-book" aria-hidden="true"></i></i></h1></b>
+              </div>
+              <div class="intro-para text-center quote">
+                <p class="big-text">Explore - Enrich - Excel</p>
+                <p class="small-text">We can help you find the best private tutor near you! </p>
+                <a href="/tutors/" class="btn">Find Tutor</a>
+              </div>
+            
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+</font>
+</div>
+</div>
+</div>
+
+    <!---->
+
+    <section id="feature" class="section-padding">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 col-sm-6 col-xs-12">
+            <div class="wrap-item text-center">
+              <div class="item-img">
+               <span class="polor"> <i class="fa fa-file-video-o fa-3x"> </i></span>
+              </div>
+              <h3 class="pad-bt15">Videos & Images</h3>
+              <hr class="bottom-line">
+              <p>Listen to our teachers speeches and see our video testimonials before you take any decisions</p>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 col-xs-12">
+            <div class="wrap-item text-center">
+              <div class="item-img">
+              <span class="polor"><i class="fa fa-thumbs-up fa-3x"> </i></span>
+              </div>
+              <h3 class="pad-bt15">Quality Scores</h3>
+              <hr class="bottom-line">
+              <p>We have rated teachers for safety and convenience as we know how important this is for you</p>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 col-xs-12">
+            <div class="wrap-item text-center">
+              <div class="item-img">
+                  <span class="polor"><i class="fa fa fa-star-o fa-3x"> </i></span>
+              </div>
+              <h3 class="pad-bt15">Reviews & Ratings</h3>
+              <hr class="bottom-line">
+              <p>No more emails, Call or messaging friends for recommendations. Get access to real reviews in seconds</p>
+            </div>
+          </div>
+          
+    </section>
+   
+    <!---->
+
+
+    <!---->
+    <section id="service" class="section-padding">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <h2 class="service-title pad-bt15"> Weekly Top Tutors</h2>
+           
+<div class="row">
+
+<% @top_tutors.each do |top_tutor| %>
+<div class="col-md-3">
+<div class="thumbnail">
+<div class="team-profile">
+
+
+
+<%= image_tag  top_tutor.image.url, class:"img-responsive" %>
+                                
+<div class="team-area">
+<div class="team-details">
+
+<h3><%= top_tutor.name %></h3><hr>
+
+<p><%= top_tutor.about_me %></p>
+
+
+ <p><%= link_to 'View Profile', top_tutor, class: "btn btn-primary" %></p>
+     </div>
+     </div>
+     </div>
+     </div>
+     </div>
+
+<% end %>
+ <%= link_to 'New Top Tutor', new_top_tutor_path %>
+ </div>
+ </div>
+
+
+          </div>
+          </div>
+          </section>
+
+
+ <!---->
+
+ <!---->
+   <section id="" class="section-padding">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <h2 class="service-title pad-bt15">Popular Institutes</h2>
+
+
+
+
+<div class="row">
+<% @popular_institutes.each do |popular_institute| %>
+<div class="col-md-3">
+
+<div class="thumbnail">
+
+<%= image_tag  popular_institute.image.url %>
+
+<div class="caption">
+
+<strong><%= popular_institute.name %></strong><br>
+<%= popular_institute.address %><hr>
+<%= link_to 'View Profile', popular_institute, class: "btn btn-primary" %>
+
+       
+
+
+  </div>
+  </div>
+  </div>
+  
+  <% end %>
+  <%= link_to 'New Popular Institute', new_popular_institute_path %>
+  </div>
+  </div>
+  </div>
+  </div>
+  
+  </section>
+
+
+
+
+
+            
+           
+         
+
+ <!---->
+
+
+ 
+
+ <!---->
+    <section id="testimonial">
+      <div class="bg-testicolor">
+      <div class="section-padding">
+        <div class="container">
+        <div class="row">
+          <div class="testimonial-item">
+          <div class="col-md-12 text-center">
+            <h2 class="service-title pad-bt15">Why Students Love Us</h2>
+            <ul class="bxslider">
+              <li>
+                <blockquote>
+                 <img src="/assets/thumb.png" class="img-responsive">
+                  <br>I got excellent coaching from the teacher which helped me to score A+ in my tests. </br>
+                </blockquote>
+                <small>Radhika Sen, Student </small>
+              </li>
+              <li>
+                <blockquote>
+               <img src="/assets/thumb.png" class="img-responsive">
+                  <br>The tutor was excellent and clarified all my doubts.</br>
+                </blockquote>
+                <small>Arshi, Student</small>
+              </li>
+              <li>
+                <blockquote>
+                  <img src="/assets/7.jpg" class="img-responsive">
+                  <br>I got personalized coaching for my daughter from a highly qualified teacher.<br>
+                </blockquote>
+                <small>Vivek Singh, Parent</small>
+              </li>
+              <li>
+                <blockquote>
+                 <img src="/assets/thumb.png" class="img-responsive">
+                  <br>My son looks forward to the classes and has developed interest in working harder.</br>
+                </blockquote>
+                <small>Saina Rajput, Parent</small>
+              </li>
+            </ul>
+          </div>
+        </div>
+        </div>
+      </div>
+    </section>
+    <!---->
+      <!---->
+    
+    <section id="feature" class="section-padding wow fadeIn delay-05s">
+      <div class="container">
+        <div class="row">
+         <div class="col-md-12 text-center">
+            <h2 class="service-title pad-bt15">Are you a Teacher ?</h2>
+            <p>Looking for a better way to reach your target audience? We can help - Just list with us For free.</p>
+            <br>
+            <br>
+          <div class="col-md-4 col-sm-6 col-xs-12">
+            <div class="wrap-item text-center">
+              <div class="item-img">
+             <span class="polor">    <i class="fa fa-line-chart fa-3x"></i> </i></span>
+              </div>
+              <h3 class="pad-bt15">Boost Sales</h3>
+              <hr class="bottom-line">
+              <p>Boost your sales and scale up all of your classes.</p>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 col-xs-12">
+            <div class="wrap-item text-center">
+              <div class="item-img">
+              <span class="polor">   <i class="fa fa-globe fa-3x"></i></span>
+              </div>
+              <h3 class="pad-bt15">Branding</h3>
+              <hr class="bottom-line">
+              <p>Get a lot of exposure & brand recognition from everyone.
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 col-xs-12">
+            <div class="wrap-item text-center">
+              <div class="item-img">
+           <span class="polor">      <i class="fa fa-university fa-3x"></i>
+              </div>
+              <h3 class="pad-bt15">School Programs</h3>
+              <hr class="bottom-line">
+              <p>Participate in various events and school programs whenever you want.</p>
+            </div>
+          </div>
+          
+    </section>
+    <br>
+    <br>
+    <!---->
+
+
+ 
+

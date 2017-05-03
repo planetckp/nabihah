@@ -1,0 +1,61 @@
+
+<br><p id="notice"><%= notice %></p>
+
+<div class="container">
+<div class="row">
+<div class="col-md-6">
+
+
+
+
+
+<%= image_tag @institute.image.url(:medium), class:"img-responsive" %>
+
+<p>
+  <strong>Name:</strong>
+  <%= @institute.name %>
+</p>
+
+<p>
+  <strong>About us:</strong>
+  <%= @institute.about_us %>
+</p>
+
+<p>
+  <strong>Estd:</strong>
+  <%= @institute.estd %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @institute.phone %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @institute.email %>
+</p>
+
+<p>
+  <strong>Class type:</strong>
+  <%= @institute.class_type %>
+</p>
+
+<p>
+  <strong>Courses:</strong>
+  <%= @institute.courses %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @institute.address %>
+</p>
+
+<%= link_to 'Edit', edit_institute_path(@institute) %> |
+<%= link_to 'Back', institutes_path %>
+
+</div>
+</div>
+</div>
+</div>
+</div>

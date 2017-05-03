@@ -1,0 +1,42 @@
+  <section id="" class="section-padding">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <h2 class="service-title pad-bt15">Best Coaching Institutes Near You</h2>
+<div class="row">
+<% @institutes.each do |institute| %>
+<div class="col-md-3">
+<p id="notice"><%= notice %></p>
+
+
+
+<div class="thumbnail">
+
+<%= image_tag  institute.image.url %>
+
+<div class="caption">
+
+<strong><%= institute.name %></strong><br>
+<%= institute.address %><hr>
+       <%= link_to 'View Profile', institute, class: "btn btn-primary" %>
+    
+
+      
+  
+       
+</div>
+</div>
+</div>
+
+ <% end %>
+
+
+
+
+<%= link_to 'New Institute', new_institute_path %>
+
+</div>
+</div>
+</div>
+</div>
+</div>

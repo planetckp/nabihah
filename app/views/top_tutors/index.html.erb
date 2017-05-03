@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Top Tutors</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Image</th>
+      <th>Name</th>
+      <th>About me</th>
+      <th>Phone</th>
+      <th>Email</th>
+      <th>Experience</th>
+      <th>Qualification</th>
+      <th>Courses</th>
+      <th>Address</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @top_tutors.each do |top_tutor| %>
+      <tr>
+        <td><%= image_tag top_tutor.image.url(:medium) %></td>
+        <td><%= top_tutor.name %></td>
+        <td><%= top_tutor.about_me %></td>
+        <td><%= top_tutor.phone %></td>
+        <td><%= top_tutor.email %></td>
+        <td><%= top_tutor.experience %></td>
+        <td><%= top_tutor.qualification %></td>
+        <td><%= top_tutor.courses %></td>
+        <td><%= top_tutor.address %></td>
+        <td><%= link_to 'Show', top_tutor %></td>
+        <td><%= link_to 'Edit', edit_top_tutor_path(top_tutor) %></td>
+        <td><%= link_to 'Destroy', top_tutor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Top Tutor', new_top_tutor_path %>

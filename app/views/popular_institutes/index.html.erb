@@ -1,0 +1,42 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Popular Institutes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>About us</th>
+      <th>Estd</th>
+      <th>Phone</th>
+      <th>Email</th>
+      <th>Class type</th>
+      <th>Courses</th>
+      <th>Address</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @popular_institutes.each do |popular_institute| %>
+      <tr>
+      <td><%= image_tag popular_institute.image.url(:medium) %></td>
+        <td><%= popular_institute.name %></td>
+        <td><%= popular_institute.about_us %></td>
+        <td><%= popular_institute.estd %></td>
+        <td><%= popular_institute.phone %></td>
+        <td><%= popular_institute.email %></td>
+        <td><%= popular_institute.class_type %></td>
+        <td><%= popular_institute.courses %></td>
+        <td><%= popular_institute.address %></td>
+        <td><%= link_to 'Show', popular_institute %></td>
+        <td><%= link_to 'Edit', edit_popular_institute_path(popular_institute) %></td>
+        <td><%= link_to 'Destroy', popular_institute, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Popular Institute', new_popular_institute_path %>

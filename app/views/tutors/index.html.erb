@@ -1,0 +1,52 @@
+<section id="" class="section-padding">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <h2 class="service-title pad-bt15">Best Tutors Near You</h2>
+<div class="row">
+<% @tutors.each do |tutor| %>
+<div class="col-md-3">
+
+
+
+
+<div class="thumbnail">
+<div class="team-profile">
+
+<%= image_tag  tutor.image.url %>
+
+
+
+<div class="team-area">
+<div class="team-details">
+
+<h3><%= tutor.name %></h3><hr>
+
+<p><%= tutor.about_me %></p>
+    
+
+      
+  
+ </div>
+     </div>
+     </div>
+     </div>
+     </div>
+
+
+
+
+
+
+ <% end %>
+<%= link_to 'New Institute', new_institute_path %>
+</div>
+          </div>
+          </section>
+
+
+
+
+
+
+      

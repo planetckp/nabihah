@@ -1,0 +1,59 @@
+<br><p id="notice"><%= notice %></p>
+
+<div class="container">
+<div class="row">
+<div class="col-md-6">
+
+
+<%= image_tag @top_tutor.image.url(:medium), class:"img-responsive" %>
+
+
+<p>
+  <strong>Name:</strong>
+  <%= @top_tutor.name %>
+</p>
+
+<p>
+  <strong>About me:</strong>
+  <%= @top_tutor.about_me %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @top_tutor.phone %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @top_tutor.email %>
+</p>
+
+<p>
+  <strong>Experience:</strong>
+  <%= @top_tutor.experience %>
+</p>
+
+<p>
+  <strong>Qualification:</strong>
+  <%= @top_tutor.qualification %>
+</p>
+
+<p>
+  <strong>Courses:</strong>
+  <%= @top_tutor.courses %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @top_tutor.address %>
+</p>
+
+<%= link_to 'Edit', edit_top_tutor_path(@top_tutor) %> |
+<%= link_to 'Back', root_path %>
+
+
+</div>
+</div>
+</div>
+</div>
+</div>
