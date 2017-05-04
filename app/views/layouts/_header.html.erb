@@ -26,6 +26,23 @@
       <li><%= link_to "About Us", pages_about_path %></li>
       <li><%= link_to "Team", pages_team_path %></li>
 
+
+
+      <% if user_signed_in? %>
+      <li><%= link_to "Edit", edit_user_registration_path %></li>
+      <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
+
+      <% else %>
+
+      <li><%= link_to "Sign Up", new_user_registration_path %></li>
+      <li><%= link_to "Sign In", new_user_session_path %></li>
+
+      <% end %>
+       
+       
+
+       
+
      
        
         </li>

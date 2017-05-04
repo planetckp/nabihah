@@ -41,6 +41,7 @@ gem "paperclip", "~> 4.2"
 gem 'paperclip-dropbox', '>= 1.2.1'
 gem 'figaro', '~> 1.1', '>= 1.1.1'
 gem 'mail_form', '~> 1.5', '>= 1.5.1'
+gem 'devise'
 
 
 
