@@ -4,6 +4,11 @@ Rails.application.routes.draw do
   devise_for :users
   resources :popular_institutes
   resources :top_tutors
+  resources :contacts, only: [:new, :create, ] 
+
+
+
+
   get 'pages/about'
 
   get 'pages/team'

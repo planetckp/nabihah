@@ -1,0 +1,75 @@
+<div class="container">
+<div class="row">
+<div class="col-md-4 col-md-offset-1">
+<br>
+
+			      <h3>Contact Info</h3><br>
+			      <div class="space"></div>
+			      <p><i class="fa fa-map-marker fa-fw pull-left fa-2x"></i>Digital VIDYAH<br>
+			        Main Road, Chakradharpur<br>
+			        &nbsp &nbsp &nbsp &nbsp &nbsp  Jharkhand -833102
+
+
+
+
+			      <div class="space"></div>
+			      <p><i class="fa fa-envelope-o fa-fw pull-left fa-2x"></i>trackschools@rediffmail.com</p>
+			      <div class="space"></div>
+			      <p><i class="fa fa-phone fa-fw pull-left fa-2x"></i>7004704145</p>
+			  
+
+</div>
+
+<br>
+<div class="container">
+<div class="row">
+<div class="col-md-4">
+<br>
+<p>Having Any Query ! Please fill the form </p>
+
+
+<%= form_for @contact do |f| %>
+
+<div class="form-group">
+<%= f.label :name %><br>
+<%= f.text_field :name, class: "form-control",  required: true %>
+</div>
+
+
+<div class="form-group">
+<%= f.label :email %><br>
+<%= f.text_field :email,  class: "form-control", required: true %>
+</div>
+
+
+
+<div class="form-group">
+<%= f.label :message %><br>
+<%= f.text_area :message, class: "form-control", as: :text %>
+
+</div>
+
+<div class="hidden">
+<%= f.label :nickname %><br>
+<%= f.text_field :nickname, hint: 'leave this filed blank' %>
+</div>
+
+<br>
+<%= f.submit 'Send Message', class: "btn btn-primary" %>
+
+<% end %>
+<br>
+<br>
+
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+
