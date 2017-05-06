@@ -93,6 +93,12 @@
 
 
  <p><%= link_to 'View Profile', top_tutor, class: "btn btn-primary" %></p>
+<% if user_signed_in? && current_user.admin? %>
+
+       <%= link_to 'Edit', edit_top_tutor_path(top_tutor), class: "btn btn-link" %>
+        <%= link_to 'Delete', top_tutor, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-link" %>
+
+        <% end %>
      </div>
      </div>
      </div>
@@ -100,7 +106,11 @@
      </div>
 
 <% end %>
+
+<% if user_signed_in? && current_user.admin? %>
  <%= link_to 'New Top Tutor', new_top_tutor_path %>
+ <% end %>
+
  </div>
  </div>
 
@@ -136,15 +146,24 @@
 <%= popular_institute.address %><hr>
 <%= link_to 'View Profile', popular_institute, class: "btn btn-primary" %>
 
-       
+<% if user_signed_in? && current_user.admin? %>
+<%= link_to 'Edit', edit_popular_institute_path(popular_institute), class: "btn btn-link" %>
+        <%= link_to 'Delete', popular_institute, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-link" %>
 
+       
+<% end %>
 
   </div>
   </div>
   </div>
   
   <% end %>
+
+<% if user_signed_in? && current_user.admin? %>
+
   <%= link_to 'New Popular Institute', new_popular_institute_path %>
+
+  <% end %>
   </div>
   </div>
   </div>

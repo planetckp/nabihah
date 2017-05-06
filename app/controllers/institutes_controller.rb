@@ -1,5 +1,7 @@
 class InstitutesController < ApplicationController
   before_action :set_institute, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, except:[:index, :show]
+   before_action :check_user, except:[:index, :show]
 
   # GET /institutes
   # GET /institutes.json
@@ -67,6 +69,13 @@ class InstitutesController < ApplicationController
       @institute = Institute.find(params[:id])
     end
 
+def check_user
+      unless current_user.admin?
+        redirect_to root_url, alert: "Sorry, only admins can do that"
+
+      end
+    end
+    
     # Never trust parameters from the scary internet, only allow the white list through.
     def institute_params
       params.require(:institute).permit(:name, :about_us, :estd, :phone, :email, :class_type, :courses, :address, :image)

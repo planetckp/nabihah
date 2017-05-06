@@ -23,9 +23,15 @@
 <h3><%= tutor.name %></h3><hr>
 
 <p><%= tutor.about_me %></p>
+
+<%= link_to 'View Profile', tutor, class: "btn btn-primary" %>
+
+<% if user_signed_in? && current_user.admin? %>
+       <%= link_to 'Edit', edit_tutor_path(tutor), class: "btn btn-link" %>
+        <%= link_to 'Delete', tutor, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-link" %>
     
 
-      
+      <% end %>
   
  </div>
      </div>
@@ -39,7 +45,10 @@
 
 
  <% end %>
-<%= link_to 'New Institute', new_institute_path %>
+
+ <% if user_signed_in? && current_user.admin? %>
+<%= link_to 'New Tutor', new_tutor_path %>
+<% end %>
 </div>
           </div>
           </section>

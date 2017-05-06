@@ -1,5 +1,7 @@
 class TopTutorsController < ApplicationController
   before_action :set_top_tutor, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, except:[:index, :show]
+   before_action :check_user, except:[:index, :show]
 
   # GET /top_tutors
   # GET /top_tutors.json
@@ -66,7 +68,13 @@ class TopTutorsController < ApplicationController
     def set_top_tutor
       @top_tutor = TopTutor.find(params[:id])
     end
+    
+def check_user
+      unless current_user.admin?
+        redirect_to root_url, alert: "Sorry, only admins can do that"
 
+      end
+    end
     # Never trust parameters from the scary internet, only allow the white list through.
     def top_tutor_params
       params.require(:top_tutor).permit(:name, :about_me, :phone, :email, :experience, :qualification, :courses, :address, :image)

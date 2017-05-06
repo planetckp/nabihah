@@ -6,7 +6,7 @@
 <div class="row">
 <% @institutes.each do |institute| %>
 <div class="col-md-3">
-<p id="notice"><%= notice %></p>
+
 
 
 
@@ -19,7 +19,12 @@
 <strong><%= institute.name %></strong><br>
 <%= institute.address %><hr>
        <%= link_to 'View Profile', institute, class: "btn btn-primary" %>
-    
+
+
+       <% if user_signed_in? && current_user.admin? %>
+       <%= link_to 'Edit', edit_institute_path(institute), class: "btn btn-link" %>
+        <%= link_to 'Delete', institute, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-link" %>
+    <% end %>
 
       
   
@@ -31,9 +36,10 @@
  <% end %>
 
 
-
+ <% if user_signed_in? && current_user.admin? %>
 
 <%= link_to 'New Institute', new_institute_path %>
+<% end %>
 
 </div>
 </div>
