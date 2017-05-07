@@ -6,7 +6,7 @@ class InstitutesController < ApplicationController
   # GET /institutes
   # GET /institutes.json
   def index
-    @institutes = Institute.all
+    @institutes = Institute.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 24)
   end
 
   # GET /institutes/1

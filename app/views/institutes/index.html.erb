@@ -36,6 +36,11 @@
  <% end %>
 
 
+ <br>
+<%= will_paginate @posts, renderer: BootstrapPagination::Rails %>
+<br>
+
+
  <% if user_signed_in? && current_user.admin? %>
 
 <%= link_to 'New Institute', new_institute_path %>
